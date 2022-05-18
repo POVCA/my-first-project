@@ -1,0 +1,23 @@
+#include <iostream>
+#define bac1 1678
+#define bac2 1734
+#define bac3 2014
+#define bac4 2536
+#define bac5 2834
+#define bac6 2927
+
+using namespace std;
+
+int main()
+{
+    int n; long T;
+    cout<<"n = "; cin>>n;
+    if(n <= 50)  T = n*bac1;
+    else if(n <= 100) T = 50*bac1 + (n-50)*bac2;
+    else if(n <= 200) T = 50*(bac1+bac2) + (n-100)*bac3;
+    else if(n <= 300) T = 50*(bac1+bac2) + 100*bac3 + (n-200)*bac4;
+    else if(n <= 400) T = 50*(bac1+bac2) + 100*(bac3 + bac4) + (n-300)*bac5;
+    else T = 50*(bac1+bac2) + 100*(bac3 + bac4 + bac5) + (n-400)*bac6;
+    cout<<"T = "<<T;
+    return 0;
+}
